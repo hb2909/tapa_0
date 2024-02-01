@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1024857039444",
+    "project_id": "tapa0-75192",
+    "storage_bucket": "tapa0-75192.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024857039444:android:065bac10c68c9f7d7183c1",
+        "android_client_info": {
+          "package_name": "com.example.tapa_0"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcSgONVO8sNNT2dYcCVTnkkSE9KI_Dn_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

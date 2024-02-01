@@ -1,0 +1,38 @@
+name: tapa_0
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.0-52.0.dev <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.1.0
+  firebase_database: ^10.4.0
+  flutter_native_splash: ^2.3.9
+  intro_screen_onboarding_flutter: ^1.0.0
+  http: ^1.2.0
+  intl: ^0.19.0
+  modal_bottom_sheet: ^3.0.0-pre
+  firebase_core: ^2.25.0
+  firebase_auth: ^4.17.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter_native_splash:
+  color: "#D6E6FF"
+  image: assets/images/splashscreen.jpg
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/
