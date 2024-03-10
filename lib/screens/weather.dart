@@ -64,7 +64,6 @@ class WeatherState extends State<WeatherScreen> {
           //forecast data
           dailyWeatherForecast = weatherData["forecast"]["forecastday"];
           hourlyWeatherForecast = dailyWeatherForecast[0]["hour"];
-          print(dailyWeatherForecast);
         });
     } catch(e){
       //debugPrint(e);
@@ -97,13 +96,27 @@ class WeatherState extends State<WeatherScreen> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      
+    appBar: AppBar(
+      automaticallyImplyLeading: false, 
+      centerTitle: true,
+      title: Text('Weather'),
+      bottom: PreferredSize(
+        preferredSize: Size.fromHeight(4), 
+        child: Divider(
+          color: Colors.blueGrey, 
+          height: 4, 
+        ),
+      ),
+    ),
+
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
       child: Container(
         width: size.width,
         height: size.height,
-        padding: const EdgeInsets.only(top: 70, left: 10, right: 10),
+        padding: const EdgeInsets.only(top: 30, left: 10, right: 10),
         color: const Color(0xff6b9dfc).withOpacity(.1),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
