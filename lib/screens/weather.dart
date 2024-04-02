@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -34,6 +36,49 @@ class WeatherState extends State<WeatherScreen> {
   String currentWeatherStatus = '';
 
   String searchWeatherAPI = "https://api.weatherapi.com/v1/forecast.json?key=$API_KEY&days=7&q=";
+
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+
+ void initializeNotifications() async {
+  final AndroidInitializationSettings initializationSettingsAndroid =
+      AndroidInitializationSettings('app_icon');
+  final InitializationSettings initializationSettings =
+      InitializationSettings(android: initializationSettingsAndroid);
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+}
+
+  Future<void> selectNotification(String? payload) async {
+    
+        if (payload != null) {
+      debugPrint('Notification payload: $payload');
+    }
+  }
+
+  Future<void> showRainNotification() async {
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+        AndroidNotificationDetails(
+            'your channel id', 'your channel name',
+            importance: Importance.max, priority: Priority.high);
+    const NotificationDetails platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.show(
+      0,
+      'Rain Alert',
+      'It\'s raining in your location!',
+      platformChannelSpecifics,
+      payload: 'Rain',
+    );
+  }
+
+  void checkForRain() {
+    bool isRaining = currentWeatherStatus.contains('rain') ||
+        currentWeatherStatus.contains('showers');
+    if (isRaining) {
+      showRainNotification();
+    }
+  }
+
 
   void fetchWeatherData(String searchText) async{
     try{
@@ -86,8 +131,12 @@ class WeatherState extends State<WeatherScreen> {
 
   @override
   void initState() {
-    fetchWeatherData(location);
     super.initState();
+    initializeNotifications();
+    fetchWeatherData(location);
+    Timer.periodic(Duration(minutes: 30), (timer) {
+      checkForRain();
+    });
   }
 
   @override
@@ -100,7 +149,7 @@ class WeatherState extends State<WeatherScreen> {
     appBar: AppBar(
       automaticallyImplyLeading: false, 
       centerTitle: true,
-      title: Text('Weather'),
+      title: Text('Weather'), 
       bottom: PreferredSize(
         preferredSize: Size.fromHeight(4), 
         child: Divider(
@@ -147,14 +196,9 @@ class WeatherState extends State<WeatherScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      "assets/menu.png",
-                      width: 40,
-                      height: 40,
-                    ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -172,7 +216,7 @@ class WeatherState extends State<WeatherScreen> {
                               builder: (context)=> SingleChildScrollView(
                                 controller: ModalScrollController.of(context),
                                 child: Container(
-                                  height: size.height * .2,
+                                  height: size.height * .7,
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 20, 
                                     vertical: 10,
@@ -227,11 +271,7 @@ class WeatherState extends State<WeatherScreen> {
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        "assets/profile.png",
-                        width: 40,
-                        height: 40,
-                      ),
+                      
                     ),
                   ],
                 ),
@@ -372,9 +412,11 @@ class WeatherState extends State<WeatherScreen> {
                           margin: const EdgeInsets.only(right: 20),
                           width: 65,
                           decoration: BoxDecoration(
-                              color: currentHour == forecastHour
-                                  ? Colors.white
-                                  : Color(0xff6b9dfc),
+                              // color: currentHour == forecastHour
+                              //     ? Colors.white
+                              //     : Color(0xff6b9dfc),
+                              color: Color(0xff6b9dfc),
+                              
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(50)),
                               boxShadow: [
