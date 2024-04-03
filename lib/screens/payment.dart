@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tapa_0/main.dart';
 import 'package:tapa_0/screens/home.dart';
 import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/user.dart';
@@ -103,17 +104,30 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   ),
                 ],
               ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {
-                // Handle payment processing (mock logic for this example)
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                Navigator.of(context)
+                    .pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        //HomeScreen(),
+                        MyBottomNavigationBar(),
+                  ),
                 );
               },
-              child: Text('Pay Now'),
-            ),
+              child: Text(
+                'Pay Now',
+                style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.blueGrey),
+                    minimumSize: MaterialStateProperty.all(Size(150, 50)),
+                  ),
+                ),
           ],
         ),
       ),
