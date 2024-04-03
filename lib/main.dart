@@ -4,6 +4,7 @@ import 'package:intro_screen_onboarding_flutter/introduction.dart';
 import 'package:intro_screen_onboarding_flutter/introscreenonboarding.dart';
 import 'package:provider/provider.dart';
 import 'package:tapa_0/screens/home.dart';
+import 'package:tapa_0/screens/welcome.dart';
 import 'package:tapa_0/screens/login.dart';
 import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/user.dart';
@@ -76,7 +77,7 @@ class Onboarding extends StatelessWidget {
       onTapSkipButton: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginScreen(),
+            builder: (context) => WelcomeScreen(),
           )),
       skipTextStyle: const TextStyle(
         color: Colors.blueGrey,
