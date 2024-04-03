@@ -88,7 +88,7 @@ Widget build(BuildContext context) {
         future: _initializeFirebase(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return Padding(
+            return SingleChildScrollView(
               padding: const EdgeInsets.only(left: 24.0, right: 24.0,top: 48),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
