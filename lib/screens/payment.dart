@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tapa_0/main.dart';
 import 'package:tapa_0/screens/home.dart';
+import 'package:tapa_0/screens/connection.dart';
 import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/user.dart';
 import 'package:tapa_0/screens/signup.dart';
@@ -112,7 +113,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   MaterialPageRoute(
                     builder: (context) =>
                         //HomeScreen(),
-                        MyBottomNavigationBar(),
+                        ConnectionScreen(),
+                        //MyBottomNavigationBar(),
                   ),
                 );
               },

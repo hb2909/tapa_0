@@ -5,6 +5,7 @@ import 'package:intro_screen_onboarding_flutter/introscreenonboarding.dart';
 import 'package:provider/provider.dart';
 import 'package:tapa_0/screens/home.dart';
 import 'package:tapa_0/screens/welcome.dart';
+import 'package:tapa_0/screens/connection.dart';
 import 'package:tapa_0/screens/login.dart';
 import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/user.dart';

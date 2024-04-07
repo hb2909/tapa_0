@@ -6,6 +6,9 @@ import 'package:tapa_0/screens/signup.dart';
 import 'package:tapa_0/screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class ConnectionScreen extends StatelessWidget {
   const ConnectionScreen({super.key});
