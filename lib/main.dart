@@ -50,22 +50,22 @@ class Onboarding extends StatelessWidget {
   final List <Introduction> list = [
     Introduction(
       title: 'TAPA-0',
-      subTitle: 'Your trusted Total Asset Protection device',
+      subTitle: 'Total Asset Protection',
       imageUrl: 'assets/logo.png',
     ),
     Introduction(
       title: 'Flood Resistant',
-      subTitle: 'Protect your cars from flood damage',
+      subTitle: 'Prevent flood damage',
       imageUrl: 'assets/images/car_flood.png',
     ),
     Introduction(
       title: 'Protection',
-      subTitle: 'Ensures your car is always protected in emergencies.',
+      subTitle: 'Protection in emergencies.',
       imageUrl: 'assets/images/protection.png',
     ),
     Introduction(
       title: 'Weather',
-      subTitle: 'Check the current weather in your selected locations.',
+      subTitle: 'Receive Weather Updates',
       imageUrl: 'assets/images/weather.png',
     ),
   ];
@@ -100,7 +100,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    HomePage(),
+    HomeScreen(),
     WeatherScreen(),
     UserScreen(),
   ];

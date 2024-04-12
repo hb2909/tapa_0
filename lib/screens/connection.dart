@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tapa_0/main.dart';
 import 'package:tapa_0/screens/home.dart';
 import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/user.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:wifi_iot/wifi_iot.dart';
 
 class ConnectionScreen extends StatelessWidget {
   const ConnectionScreen({super.key});
@@ -21,3 +23,4 @@ class ConnectionScreen extends StatelessWidget {
     );
   }
 }
+

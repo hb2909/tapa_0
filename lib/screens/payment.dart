@@ -113,8 +113,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   MaterialPageRoute(
                     builder: (context) =>
                         //HomeScreen(),
-                        ConnectionScreen(),
-                        //MyBottomNavigationBar(),
+                        //ConnectionScreen(),
+                        MyBottomNavigationBar(),
                   ),
                 );
               },

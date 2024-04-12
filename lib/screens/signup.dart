@@ -168,7 +168,8 @@ class _SignupScreenState extends State<SignupScreen> {
                                       MaterialPageRoute(
                                         builder: (context) => 
                                           //HomeScreen(),
-                                          MyBottomNavigationBar(),
+                                          //MyBottomNavigationBar(),
+                                          LoginScreen(),
                                       ),
                                       ModalRoute.withName('/'),
                                       ); 
