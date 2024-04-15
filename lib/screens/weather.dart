@@ -375,9 +375,7 @@ class WeatherState extends State<WeatherScreen> {
                       
                     ],
             ),
-            const SizedBox(
-                    height: 8,
-                  ),
+            const SizedBox(height: 8),
                   SizedBox(
                     height: 110,
                     child: ListView.builder(
