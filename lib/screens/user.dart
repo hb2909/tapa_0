@@ -1,9 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tapa_0/screens/home.dart';
+import 'package:tapa_0/screens/passwordchange.dart';
 import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/signup.dart';
 import 'package:tapa_0/screens/login.dart';
+import 'package:tapa_0/screens/accountclosure.dart';
+import 'package:tapa_0/screens/passwordchange.dart';
+import 'package:tapa_0/screens/warranty.dart';
 
 class UserScreen extends StatefulWidget {
   final user = FirebaseAuth.instance.currentUser;
@@ -63,6 +67,10 @@ class _UserScreenState extends State<UserScreen> {
               ),
             trailing: Icon(Icons.chevron_right),
             onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => WarrantyScreen()),
+              );
               // Navigate to change password screen or handle password change
             },
           ),
@@ -75,19 +83,27 @@ class _UserScreenState extends State<UserScreen> {
               ),
             trailing: Icon(Icons.chevron_right),
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PasswordChangeScreen()),
+              );
               // Navigate to change password screen or handle password change
             },
           ),
           ListTile(
             title: Text(
               'Account Closure',
-                style: TextStyle(
-                  fontSize: 18,
-                ),
+              style: TextStyle(
+                fontSize: 18,
               ),
+            ),
             trailing: Icon(Icons.chevron_right),
             onTap: () {
-              // Handle account closure logic
+              // Navigate to AccountClosureScreen
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AccountClosureScreen()),
+              );
             },
           ),
           // Add more list items as needed

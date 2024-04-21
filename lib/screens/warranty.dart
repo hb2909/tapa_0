@@ -6,7 +6,7 @@ class WarrantyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Warranty Screen'),
+        child: Text('Warranty'),
       ),
     );
   }
