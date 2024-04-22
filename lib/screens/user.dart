@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:tapa_0/screens/deviceInfo.dart';
 import 'package:tapa_0/screens/home.dart';
 import 'package:tapa_0/screens/passwordchange.dart';
 import 'package:tapa_0/screens/weather.dart';
@@ -7,6 +8,7 @@ import 'package:tapa_0/screens/signup.dart';
 import 'package:tapa_0/screens/login.dart';
 import 'package:tapa_0/screens/accountclosure.dart';
 import 'package:tapa_0/screens/passwordchange.dart';
+import 'package:tapa_0/screens/deviceInfo.dart';
 import 'package:tapa_0/screens/warranty.dart';
 
 class UserScreen extends StatefulWidget {
@@ -34,7 +36,7 @@ class _UserScreenState extends State<UserScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false, 
         centerTitle: true,
-        title: Text('User'), 
+        title: Text('About Device'), 
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(4), 
           child: Divider(
@@ -48,7 +50,7 @@ class _UserScreenState extends State<UserScreen> {
           SizedBox(height: 20),
           ListTile(
             title: Text(
-              'Profile',
+              'Device Screen',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -56,6 +58,10 @@ class _UserScreenState extends State<UserScreen> {
             trailing: Icon(Icons.chevron_right),
             onTap: () {
               // Navigate to profile screen or handle profile actions
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DeviceScreen()),
+              );
             },
           ),
           ListTile(
@@ -111,7 +117,7 @@ class _UserScreenState extends State<UserScreen> {
       ),
       // Removed FloatingActionButton
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 50),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
         child: ElevatedButton(
           onPressed: signOut,
           child: Text(
@@ -126,6 +132,7 @@ class _UserScreenState extends State<UserScreen> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           ),
         ),
       ),
