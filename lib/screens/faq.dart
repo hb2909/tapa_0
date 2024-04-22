@@ -29,34 +29,34 @@ class FAQScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Coverage',
+              'Is my information on TAPA-0 private?',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
             Text(
-              'This warranty covers TAPA-0 hardware device and its accompanying products and sensors.',
+              'The TAPA-0 device will only record current data. All users’ information will be kept private and confidential. ',
             ),
             SizedBox(height: 16.0),
             Text(
-              'Warranty Period',
+              'How should I connect to the TAPA-0 device?',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
             Text(
-              'The warranty is valid for one (1) year from the date of purchase.',
+              'The TAPA-0 device should be able to be connected by clicking the Start Scanning button on the Homepage.'
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: 20.0),
             Text(
-              'What\'s Covered',
+              'What should I do if my device is faulty?',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
             Text(
-              'This warranty covers device manufacturing defects and any malfunctions in its material and workmanship.',
+              'If you found out that your device is faulty or broken, please contact the device manufacturers at tapa0@gmail.com to schedule a maintenance service.',
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: 20.0),
             Text(
-              'What\'s Not Covered',
+              'What\'s Not Covered by the Warranty?',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
@@ -67,14 +67,14 @@ class FAQScreen extends StatelessWidget {
               // '\t\t\t• \t\tNatural Disasters (e.g., lightning strike, landslides)\n',
               '\t\t\t• \t\tIntentional damage to the device. \n',
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: 20.0),
             Text(
-              'Warranty Service Process',
+              'What if my questions are not found in the FAQ page?',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
             Text(
-              'To make a warranty claim, please contact us at support@tapa0.com.',
+              'If your questions are not included in our FAQ page, feel free to email us at support@tapa0.com and we will try our best to answer your questions and problems. ',
             ),
           ],
         ),
