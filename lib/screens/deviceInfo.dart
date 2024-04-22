@@ -1,55 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tapa_0/screens/warranty.dart';
 
-// class ProfileScreen extends StatelessWidget {
-//   const ProfileScreen({super.key});
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Scaffold(
-//       body: Center(
-//         child: Text('Profile Screen'),
-//       ),
-//     );
-//   }
-// }
-// class DeviceScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Device Info'),
-//       ),
-//       body: Padding(
-//         padding: EdgeInsets.all(16.0),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Text(
-//               'Device Name:',
-//               style: TextStyle(fontWeight: FontWeight.bold),
-//             ),
-//             Text('Flood Detector X1000'), // Replace with desired name
-//             SizedBox(height: 8.0),
-//             Text(
-//               'Battery Level:',
-//               style: TextStyle(fontWeight: FontWeight.bold),
-//             ),
-//             Text('N/A'), // Placeholder for dynamic data
-//             SizedBox(height: 8.0),
-//             Text(
-//               'Wi-Fi Connection:',
-//               style: TextStyle(fontWeight: FontWeight.bold),
-//             ),
-//             Text('N/A'), // Placeholder for dynamic data
-//             SizedBox(height: 8.0),
-//             // Add more UI elements for other device info
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class DeviceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

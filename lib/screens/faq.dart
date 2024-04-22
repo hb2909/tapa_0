@@ -1,19 +1,28 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
 
-class WarrantyScreen extends StatelessWidget {
+// class FAQScreen extends StatelessWidget {
+//   const FAQScreen({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Scaffold(
+//       body: Center(
+//         child: Text('FAQ Screen'),
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+import 'package:tapa_0/screens/warranty.dart';
+
+class FAQScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
-        title: Text('Warranty'),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 20.0,
-        ),
-        centerTitle: true,
+        title: Text('Frequently Asked Questions'),
       ),
-        body: 
+      body: 
           SingleChildScrollView(
         padding: EdgeInsets.all(20.0),
         child: Column(

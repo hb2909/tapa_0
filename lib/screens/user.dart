@@ -2,12 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tapa_0/screens/deviceInfo.dart';
 import 'package:tapa_0/screens/home.dart';
-import 'package:tapa_0/screens/passwordchange.dart';
+import 'package:tapa_0/screens/faq.dart';
 import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/signup.dart';
 import 'package:tapa_0/screens/login.dart';
 import 'package:tapa_0/screens/accountclosure.dart';
-import 'package:tapa_0/screens/passwordchange.dart';
+import 'package:tapa_0/screens/faq.dart';
 import 'package:tapa_0/screens/deviceInfo.dart';
 import 'package:tapa_0/screens/warranty.dart';
 
@@ -82,7 +82,7 @@ class _UserScreenState extends State<UserScreen> {
           ),
           ListTile(
             title: Text(
-              'Change Password',
+              'Frequently Asked Questions',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -91,7 +91,7 @@ class _UserScreenState extends State<UserScreen> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PasswordChangeScreen()),
+                MaterialPageRoute(builder: (context) => FAQScreen()),
               );
               // Navigate to change password screen or handle password change
             },

@@ -127,8 +127,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
             label: 'Weather',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'User',
+            icon: Icon(Icons.car_repair),
+            label: 'Device',
           ),
         ],
       ),
