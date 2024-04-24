@@ -160,6 +160,7 @@ class WeatherState extends State<WeatherScreen> {
     ),
 
       resizeToAvoidBottomInset: false,
+
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
       child: Container(
@@ -356,7 +357,7 @@ class WeatherState extends State<WeatherScreen> {
             ),
             ),
             Container(
-              padding: const EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.only(top: 10, left: 10),
               height: size.height * .20,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -375,9 +376,9 @@ class WeatherState extends State<WeatherScreen> {
                       
                     ],
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 5),
                   SizedBox(
-                    height: 110,
+                    height: 100,
                     child: ListView.builder(
                       itemCount: hourlyWeatherForecast.length,
                       scrollDirection: Axis.horizontal,
@@ -496,7 +497,7 @@ class WeatherItem extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.all(10),
-          height: 60,
+          height: 50,
           width: 60,
           decoration: BoxDecoration(
             color: Colors.transparent,

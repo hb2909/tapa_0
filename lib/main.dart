@@ -11,6 +11,8 @@ import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/user.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:tapa_0/notifications/activate_signal_listener.dart';  
+import 'package:firebase_messaging/firebase_messaging.dart'; 
 
 
 Future<void> main() async {
@@ -25,6 +27,40 @@ Future<void> main() async {
       databaseURL: 'https://tapa0-75192-default-rtdb.asia-southeast1.firebasedatabase.app', // Update with the correct database URL
     ),
  );
+ 
+//  FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+//   // Request notification permissions
+//   NotificationSettings settings = await messaging.requestPermission(
+//     alert: true,
+//     announcement: true,
+//     badge: true,
+//   );
+
+//   if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+//     print('User granted permission for notifications');
+
+//     // Configure message handlers
+//     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+//       // Handle in-app notification display here (foreground or resumed)
+//       print('Received message: ${message.notification?.title}');
+//     });
+//     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+//       // Navigate to a specific screen based on the notification content
+//       print('Notification tapped: ${message.notification?.title}');
+//     });
+
+//     // Get the FCM token for sending notifications from the server
+//     String? token = await messaging.getToken();
+//     print('FCM Token: $token');
+
+//     // Create listener instance (replace with your actual implementation)
+//     final activateSignalListener = ActivateSignalListener(token);
+//     activateSignalListener.listenForChanges(); // Start listening
+
+//   } else {
+//     print('User declined or has not granted notification permission');
+//   }
   runApp(const MyApp());
 }
 

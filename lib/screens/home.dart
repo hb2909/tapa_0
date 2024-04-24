@@ -4,6 +4,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:tapa_0/notifications/activate_signal_listener.dart';  
+
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -242,7 +244,7 @@ void _listenForCoverState(String dataPath) {
             child: ElevatedButton(
               onPressed: _toggleESP32Activation,
               child: Text(
-                esp32Activated ? 'Deactivate ESP32' : 'Activate ESP32',
+                esp32Activated ? 'Deactivate TAPA-0' : 'Activate TAPA-0',
                 style: TextStyle(fontSize: 18),
               ),
             ),
