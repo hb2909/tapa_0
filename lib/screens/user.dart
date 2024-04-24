@@ -10,6 +10,8 @@ import 'package:tapa_0/screens/accountclosure.dart';
 import 'package:tapa_0/screens/faq.dart';
 import 'package:tapa_0/screens/deviceInfo.dart';
 import 'package:tapa_0/screens/warranty.dart';
+import 'package:tapa_0/screens/maintenance.dart';
+
 
 class UserScreen extends StatefulWidget {
   final user = FirebaseAuth.instance.currentUser;
@@ -98,17 +100,18 @@ class _UserScreenState extends State<UserScreen> {
           ),
           ListTile(
             title: Text(
-              'Account Closure',
+              //'Account Closure',
+              'Device Maintenance',
               style: TextStyle(
                 fontSize: 18,
               ),
             ),
             trailing: Icon(Icons.chevron_right),
             onTap: () {
-              // Navigate to AccountClosureScreen
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AccountClosureScreen()),
+                //MaterialPageRoute(builder: (context) => AccountClosureScreen()),
+                MaterialPageRoute(builder: (context) => MaintenanceScreen()),
               );
             },
           ),

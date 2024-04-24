@@ -44,11 +44,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
   }
 
   bool _validateEWallet(String eWallet) {
-    return eWallet.isNotEmpty;
+    //return eWallet.isNotEmpty;
+    return eWallet.length >= 10; 
   }
   
   bool _validatePin(String pin) {
-    return pin.length == 6; 
+    return pin.length >= 6; 
   }
 
   bool _validateForm() {
