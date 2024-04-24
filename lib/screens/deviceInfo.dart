@@ -7,7 +7,13 @@ class DeviceScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Text('About Device'),
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+        ),
+        centerTitle: true,
       ),
       body: Padding( // Add padding around all child widgets
         padding: const EdgeInsets.all(20.0), // Adjust padding as desired

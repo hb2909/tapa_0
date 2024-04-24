@@ -52,18 +52,43 @@ class MaintenanceScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        ReportScreen(),
-                  ),
-                );
-              },
-              child: Text('Report Issue'),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (context) =>
+            //             ReportScreen(),
+            //       ),
+            //     );
+            //   },
+            //   child: Text('Report Issue'),
+            // ),
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ReportScreen()),
+            );
+          },
+          child: Text(
+            'Report an Issue',
+            style: TextStyle(
+              color: Colors.white,
+                fontSize: 20,
+            ),),
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white, // Text color
+            backgroundColor: Colors.blueGrey, // Button background color
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          ),
         ),
       ),
     );

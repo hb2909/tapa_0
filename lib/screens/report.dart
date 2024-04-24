@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tapa_0/screens/maintenance.dart';
 
 class ReportScreen extends StatefulWidget {
   @override
@@ -73,17 +72,50 @@ class _ReportScreenState extends State<ReportScreen> {
               SizedBox(height: 16.0),
 
               // Submit Button
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
-                    // Handle form submission (send report)
-                    print('Issue reported: $_issueDescription by $_reportedBy');
-                  }
-                },
-                child: Text('Submit Report'),
-              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     if (_formKey.currentState!.validate()) {
+              //       _formKey.currentState!.save();
+              //       // Handle form submission (send report)
+              //       print('Issue reported: $_issueDescription by $_reportedBy');
+              //     }
+              //   },
+              //   child: Text('Submit Report'),
+              // ),
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+        child: 
+        ElevatedButton(
+          // onPressed: () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(builder: (context) => WarrantyScreen()),
+          //   );
+          // },
+          onPressed: () {
+            if (_formKey.currentState!.validate()) {
+              _formKey.currentState!.save();
+              // Handle form submission (send report)
+              print('Issue reported: $_issueDescription by $_reportedBy');
+            }
+          },
+          child: Text(
+            'Submit Report',
+            style: TextStyle(
+              color: Colors.white,
+                fontSize: 20,
+            ),),
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white, // Text color
+            backgroundColor: Colors.blueGrey, // Button background color
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           ),
         ),
       ),
