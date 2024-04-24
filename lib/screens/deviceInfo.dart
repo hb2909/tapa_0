@@ -5,6 +5,7 @@ class DeviceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('About Device'),
       ),
@@ -51,16 +52,16 @@ class DeviceScreen extends StatelessWidget {
                       children: [
                         Text(
                           'Device Name',
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         ), 
-                        SizedBox(width: 30.0),
+                        SizedBox(width: 20.0),
                         Text(':',
                           style: TextStyle(fontSize: 18, color: Colors.grey[600], fontWeight: FontWeight.w500),
                         ),
                         SizedBox(width: 4.0),
                         Text(
                           'TAPA_0112030',
-                          style: TextStyle(fontSize: 18, color: Colors.grey[600], fontWeight: FontWeight.w500),
+                          style: TextStyle(fontSize: 16, color: Colors.grey[600], fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
@@ -70,15 +71,15 @@ class DeviceScreen extends StatelessWidget {
                       children: [
                         Text(
                           'Purchase Date',
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(width: 1.0),
+                        SizedBox(width: 0.0),
                         Text(':',
                           style: TextStyle(fontSize: 18, color: Colors.grey[600], fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(width: 15.0),
+                        SizedBox(width: 21.0),
                         Text('11/12/2023',
-                          style: TextStyle(fontSize: 18, color: Colors.grey[600], fontWeight: FontWeight.w500),
+                          style: TextStyle(fontSize: 16, color: Colors.grey[600], fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
@@ -88,14 +89,14 @@ class DeviceScreen extends StatelessWidget {
                       children: [
                         Text(
                           'Warranty Expiry',
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         Text(':',
                           style: TextStyle(fontSize: 18, color: Colors.grey[600], fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(width: 10.0),
+                        SizedBox(width: 26.0),
                         Text('11/12/2025',
-                          style: TextStyle(fontSize: 18, color: Colors.grey[600], fontWeight: FontWeight.w500),
+                          style: TextStyle(fontSize: 16, color: Colors.grey[600], fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
