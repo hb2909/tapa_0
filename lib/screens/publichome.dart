@@ -4,7 +4,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:permission_handler/permission_handler.dart'; 
-import 'package:tapa_0/screens/pay.dart';
 import 'package:tapa_0/screens/welcome.dart';
 
 
