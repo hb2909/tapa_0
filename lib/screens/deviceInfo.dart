@@ -122,7 +122,7 @@ class DeviceScreen extends StatelessWidget {
             );
           },
           child: Text(
-            'Check Warranty',
+            'Warranty Terms and Conditions',
             style: TextStyle(
               color: Colors.white,
                 fontSize: 20,
