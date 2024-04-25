@@ -4,14 +4,67 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:permission_handler/permission_handler.dart'; 
+import 'package:tapa_0/screens/pay.dart';
+import 'package:tapa_0/screens/welcome.dart';
 
 
-class HomeScreen extends StatefulWidget {
+class PublicHomeScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _PublicHomeScreenState createState() => _PublicHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+
+class PaymentSuccessModal extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Material(
+        color: Colors.white.withOpacity(1.0), // Semi-transparent background
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Avoid modal taking full screen
+            mainAxisAlignment: MainAxisAlignment.center, // Center content vertically
+            crossAxisAlignment: CrossAxisAlignment.center, // Center content horizontally
+            children: [
+              Icon(Icons.check_circle, size: 50, color: Colors.green),
+              SizedBox(height: 10), // Add spacing between icon and text
+              Text(
+                'Payment Made Successfully!',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                  );
+                },
+                child: Text('Close',
+                style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+            ),),
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white, // Text color
+            backgroundColor: Colors.blueGrey, // Button background color
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          ),
+        ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+class _PublicHomeScreenState extends State<PublicHomeScreen> {
   final GlobalKey qrScannerKey = GlobalKey(debugLabel: 'QR');
   DatabaseReference _databaseReference = FirebaseDatabase.instance.reference();
   // String deviceId = "";
@@ -152,7 +205,7 @@ void _listenForCoverState(String dataPath) {
             ),
           ),
           
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 16),
             decoration: BoxDecoration(
@@ -184,7 +237,7 @@ void _listenForCoverState(String dataPath) {
               ],
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: ElevatedButton(
@@ -198,6 +251,32 @@ void _listenForCoverState(String dataPath) {
         ],
       ),
     ),
+    bottomNavigationBar: Container(
+        padding: EdgeInsets.only(right: 30, left: 30, bottom: 20, top: 0),
+        child: ElevatedButton(
+          // },
+          onPressed: () async {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) => PaymentSuccessModal(),
+            );
+          },
+          child: Text(
+            'Pay Now',
+            style: TextStyle(
+              color: Colors.white,
+                fontSize: 20,
+            ),),
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white, // Text color
+            backgroundColor: Colors.blueGrey, // Button background color
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          ),
+        ),
+      ),
     );
   }
 

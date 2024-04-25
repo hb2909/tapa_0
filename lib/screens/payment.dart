@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tapa_0/main.dart';
-import 'package:tapa_0/screens/home.dart';
+import 'package:tapa_0/screens/publichome.dart';
 import 'package:tapa_0/screens/connection.dart';
 import 'package:tapa_0/screens/weather.dart';
 import 'package:tapa_0/screens/user.dart';
@@ -75,7 +75,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     if (_validateForm()) {
       // User input is valid, navigate to Home
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => MyBottomNavigationBar()),
+        MaterialPageRoute(builder: (context) => PublicBottomNavigationBar()),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -93,7 +93,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
-        title: Text('Payment'),
+        title: Text('Payment Details'),
         titleTextStyle: TextStyle(
           color: Colors.white,
           fontSize: 20.0,
@@ -227,7 +227,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         ElevatedButton( 
           onPressed: _handlePayNow, 
           child: Text(
-            'Pay Now',
+            'Enter Payment Details',
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,

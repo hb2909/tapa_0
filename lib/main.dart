@@ -4,6 +4,7 @@ import 'package:intro_screen_onboarding_flutter/introduction.dart';
 import 'package:intro_screen_onboarding_flutter/introscreenonboarding.dart';
 import 'package:provider/provider.dart';
 import 'package:tapa_0/screens/home.dart';
+import 'package:tapa_0/screens/publichome.dart';
 import 'package:tapa_0/screens/welcome.dart';
 import 'package:tapa_0/screens/connection.dart';
 import 'package:tapa_0/screens/login.dart';
@@ -165,6 +166,50 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.car_repair),
             label: 'Device',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class PublicBottomNavigationBar extends StatefulWidget{
+  const PublicBottomNavigationBar({Key? key}) : super(key: key);
+  
+   @override
+  _PublicBottomNavigationBarState createState() => _PublicBottomNavigationBarState();
+}
+
+class _PublicBottomNavigationBarState extends State<PublicBottomNavigationBar> {
+  int _currentIndex = 0;
+
+  final List<Widget> _pages = [
+    PublicHomeScreen(),
+    WeatherScreen(),
+  ];
+  
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.cloud),
+            label: 'Weather',
           ),
         ],
       ),
