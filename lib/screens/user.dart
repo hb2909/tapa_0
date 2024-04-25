@@ -124,7 +124,7 @@ class _UserScreenState extends State<UserScreen> {
         child: ElevatedButton(
           onPressed: signOut,
           child: Text(
-            'Quit App',
+            'Log Out',
             style: TextStyle(
               color: Colors.white,
                 fontSize: 20,
