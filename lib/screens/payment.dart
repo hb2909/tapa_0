@@ -44,12 +44,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
   }
 
   bool _validateEWallet(String eWallet) {
-    //return eWallet.isNotEmpty;
-    return eWallet.length >= 10; 
-  }
+  return eWallet.length == 10; // Only valid if 10 digits
+}
   
   bool _validatePin(String pin) {
-    return pin.length >= 6; 
+    return pin.length == 6; 
   }
 
   bool _validateForm() {
@@ -149,33 +148,37 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 _selectedPaymentMethod == 'card'
                   ? Image.asset(
                       'assets/images/card_icon.png',
-                      width: 300, 
-                      height: 250, 
+                      width: 200, 
+                      height: 150, 
                       fit: BoxFit.contain, 
                     )
                   : Image.asset(
                       'assets/images/ewallet_icon.png',
-                      width: 300, 
-                      height: 250, 
+                      width: 200, 
+                      height: 150, 
                       fit: BoxFit.cover, 
                     ),
                 ],
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 10.0),
             if (_selectedPaymentMethod == 'ewallet')
             Column(
             children: [
               TextField(
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'E-Wallet',
                   errorText: _validateEWallet(_eWallet) ? null : 'Enter your phone number',
                 ),
+                onChanged: (value) => setState(() => _eWallet = value),
               ),
               TextField(
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'PIN Number',
                   errorText: _validatePin(_pin) ? null : 'Enter a valid PIN (6 digits)',
                 ),
+                onChanged: (value) => setState(() => _pin = value),
               ),
             ],
             ),

@@ -20,7 +20,13 @@ class FAQScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Text('Frequently Asked Questions'),
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+        ),
+        centerTitle: true,
       ),
       body: 
           SingleChildScrollView(

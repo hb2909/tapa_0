@@ -13,6 +13,7 @@ class _ReportScreenState extends State<ReportScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         title: Text('Report an Issue'),
@@ -28,6 +29,39 @@ class _ReportScreenState extends State<ReportScreen> {
           key: _formKey,
           child: Column(
             children: [
+              Text(
+                'Have any issues with our service?',
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 22.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Email Address',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your email address here.';
+                  }
+                  return null;
+                },
+                onSaved: (value) => setState(() => _issueDescription = value!),
+              ),
+              SizedBox(height: 16.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Reported By (Name)',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your name.';
+                  }
+                  return null;
+                },
+                onSaved: (value) => setState(() => _reportedBy = value!),
+              ),
+              SizedBox(height: 16.0),
               TextFormField(
                 decoration: InputDecoration(
                   labelText: 'Describe the Issue',
@@ -56,20 +90,7 @@ class _ReportScreenState extends State<ReportScreen> {
                 onSaved: (value) => setState(() => _issueDescription = value!),
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Reported By (Name)',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your name.';
-                  }
-                  return null;
-                },
-                onSaved: (value) => setState(() => _reportedBy = value!),
-              ),
-              SizedBox(height: 16.0),
+              
 
               // Submit Button
               // ElevatedButton(
