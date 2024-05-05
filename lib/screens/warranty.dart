@@ -60,7 +60,7 @@ class WarrantyScreen extends StatelessWidget {
             ),
             SizedBox(height: 16.0),
             Text(
-              'Warranty Service Process',
+              'Warranty Service T&C',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
